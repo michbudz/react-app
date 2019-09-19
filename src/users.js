@@ -1,18 +1,18 @@
 import React from "react";
-import { List, Datagrid, TextField, EmailField } from "react-admin";
+import { List, Datagrid, TextField, EmailField, ChipField } from "react-admin";
 import MyUrlField from "./components/MyUrlField";
 
 export const UserList = props => (
-  <List {...props}>
+  <List {...props} title="Użytkownicy">
     <Datagrid rowClick="edit">
-      <TextField source="id" />
-      <TextField source="name" />
-      <TextField source="username" />
+      <TextField source="id" style={{ color: "purple" }} />
+      <TextField source="name" label="Imię" />
+      <TextField source="username" label="Nazwisko" />
       <EmailField source="email" />
       <TextField source="address.street" />
       <TextField source="phone" />
       <MyUrlField source="website" />
-      <TextField source="company.name" />
+      <ChipField source="company.name" />
     </Datagrid>
   </List>
 );
